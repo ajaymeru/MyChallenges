@@ -3,7 +3,11 @@ import React, { useState } from 'react';
 import DropDown from './Preparation/Dropdown/DropDown';
 import Formvalidation from './Preparation/Formvalidation/Formvalidation';
 
-const alltasks = [DropDown, Formvalidation];
+// Define components with names
+const alltasks = [
+  { name: "DropDown", component: DropDown },
+  { name: "Form Validation", component: Formvalidation }
+];
 
 function App() {
   const [SelectedComponent, setSelectedComponent] = useState(null);
@@ -15,13 +19,11 @@ function App() {
         <p>Fueled by Challenges, Driven to Succeed</p>
       </div>
       <div className="theRoap">
-        {
-          alltasks.map((TaskComponent, index) => (
-            <button key={index} onClick={() => setSelectedComponent(() => TaskComponent)}>
-              {TaskComponent.name}
-            </button>
-          ))
-        }
+        {alltasks.map((task, index) => (
+          <button key={index} onClick={() => setSelectedComponent(() => task.component)}>
+            {task.name}
+          </button>
+        ))}
       </div>
       <div className="renderedComponent">
         {SelectedComponent && <SelectedComponent />}
