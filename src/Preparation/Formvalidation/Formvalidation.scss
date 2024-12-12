@@ -1,0 +1,42 @@
+.Formvalidation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    form {
+      display: flex;
+      flex-direction: column;
+      width: fit-content;
+      gap: 2vh;
+  
+      input {
+        width: fit-content;
+        padding: 10px 20px;
+        outline: none;
+        color: white;
+        border-radius: 10px;
+        border: 1px solid gray;
+        cursor: pointer;
+  
+        &[type="submit"] {
+          width: 100%;
+          background-color: #4caf50;
+          color: white;
+          font-weight: bold;
+          cursor: pointer;
+        }
+  
+        &[type="submit"]:hover {
+          background-color: #45a049;
+        }
+      }
+  
+      .error {
+        color: red;
+        font-size: 0.8em;
+        margin-top: -1vh;
+      }
+    }
+  }
+  

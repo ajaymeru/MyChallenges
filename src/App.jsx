@@ -1,8 +1,9 @@
 import './App.scss';
 import React, { useState } from 'react';
 import DropDown from './Preparation/Dropdown/DropDown';
+import Formvalidation from './Preparation/Formvalidation/Formvalidation';
 
-const alltasks = [DropDown];
+const alltasks = [DropDown, Formvalidation];
 
 function App() {
   const [SelectedComponent, setSelectedComponent] = useState(null);
